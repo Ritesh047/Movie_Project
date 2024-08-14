@@ -1,33 +1,40 @@
+/* General Styling */
 .App {
   text-align: center;
 }
 
 .App-logo {
   height: 40vmin;
-  pointer-events: none;
+  pointer-events: none; /* Prevent interaction with the logo */
 }
 
+/* Logo Animation */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 20s linear; /* Smooth spinning animation */
   }
 }
 
+/* Header Styling */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #282c34; /* Dark background for the header */
+  min-height: 100vh; /* Full viewport height */
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  font-size: calc(10px + 2vmin); /* Responsive font size */
+  color: white; /* White text color */
 }
 
+/* Link Styling */
 .App-link {
-  color: #61dafb;
+  color: #61dafb; /* Light blue color for links */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Make links bold */
 }
 
+/* Keyframes for Logo Spin Animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

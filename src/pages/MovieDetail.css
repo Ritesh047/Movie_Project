@@ -1,0 +1,106 @@
+/* MovieDetail.css */
+
+/* Container for the entire movie detail page */
+.movie-detail-container {
+    padding: 16px;
+    background-color: #333;
+    color: #fff;
+    min-height: 100vh;
+  }
+  
+  /* Card styling */
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #444;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Movie poster styling */
+  .movie-poster {
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Limit the maximum height for large images */
+    object-fit: cover;
+  }
+  
+  /* Fallback image styling */
+  .no-image {
+    width: 100%;
+    height: 200px;
+    background-color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  /* Card content styling */
+  .movie-card-content {
+    padding: 16px;
+    text-align: center;
+  }
+  
+  /* Movie details styling */
+  .movie-details {
+    margin-top: 16px;
+    text-align: left;
+  }
+  
+  /* Movie title styling */
+  .movie-title {
+    margin-bottom: 16px;
+  }
+  
+  /* Movie summary styling */
+  .movie-summary {
+    margin-top: 8px;
+  }
+  
+  /* Actors section styling */
+  .actors-section {
+    margin-top: 32px;
+  }
+  
+  /* Section title styling */
+  .section-title {
+    margin-bottom: 16px;
+  }
+  
+  /* Actor card styling */
+  .actor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #555;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Actor image styling */
+  .actor-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Actor content styling */
+  .actor-content {
+    text-align: center;
+    padding: 8px;
+  }
+  
+  /* Button styling */
+  .go-back-button {
+    margin-top: 16px;
+    background-color: #f06;
+    color: #fff;
+  }
+  
