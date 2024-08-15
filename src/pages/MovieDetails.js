@@ -64,11 +64,11 @@ const MovieDetail = () => {
       />
       <Box className="movie-detail-overlay" />
       <Card className="movie-card">
-        {movie.backdrop_path ? (
+        {movie.poster_path ? (
           <CardMedia
             component="img"
             alt={movie.title}
-            image={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
+            image={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
             title={movie.title}
             className="movie-poster"
           />
@@ -115,7 +115,7 @@ const MovieDetail = () => {
                   <CardMedia
                     component="img"
                     alt={actor.name}
-                    image={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`}
+                    image={`https://image.tmdb.org/t/p/w500/${actor.profile_path}`}
                     title={actor.name}
                     className="actor-image"
                   />

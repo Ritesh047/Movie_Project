@@ -14,8 +14,8 @@
 .movie-grid-item {
   flex: 1 1 calc(25% - 16px); /* Responsive: 4 items per row */
   box-sizing: border-box;
-  background: linear-gradient(to bottom right, #000000, #ff4b2b, #ff416c); /* Gradient from black to vibrant colors */
-  color: #fff; /* Text color to stand out against the gradient */
+  background: #000000; /* Black background */
+  color: #F8F9FA; /* Almost White text color */
   padding: 16px;
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -40,28 +40,29 @@
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 8px;
+  color: #FF6B6B; /* Coral Pink for titles */
 }
 
 .movie-details {
   font-size: 0.9rem;
-  color: #120f0ff0; /* Light color for better readability on the gradient */
+  color: #FF9F1C; /* Tangerine for details */
 }
 
 /* Media queries for responsiveness */
 @media (max-width: 1200px) {
   .movie-grid-item {
-      flex: 1 1 calc(33.33% - 16px); /* 3 items per row on large screens */
+    flex: 1 1 calc(33.33% - 16px); /* 3 items per row on large screens */
   }
 }
 
 @media (max-width: 900px) {
   .movie-grid-item {
-      flex: 1 1 calc(50% - 16px); /* 2 items per row on medium screens */
+    flex: 1 1 calc(50% - 16px); /* 2 items per row on medium screens */
   }
 }
 
 @media (max-width: 600px) {
   .movie-grid-item {
-      flex: 1 1 100%; /* 1 item per row on small screens */
+    flex: 1 1 100%; /* 1 item per row on small screens */
   }
 }

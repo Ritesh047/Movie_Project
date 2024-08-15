@@ -17,21 +17,29 @@
 
 /* Header Styling */
 .App-header {
-  background-color: #282c34; /* Dark background for the header */
+  background-color: #1B263B; /* Updated to Deep Navy for a more modern look */
   min-height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column; /* Align items vertically */
   align-items: center; /* Center horizontally */
   justify-content: center; /* Center vertically */
-  font-size: calc(10px + 2vmin); /* Responsive font size */
-  color: white; /* White text color */
+  font-size: calc(12px + 2vmin); /* Slightly larger responsive font size */
+  color: #11467b; /* Updated to Almost White for better contrast */
+  padding: 20px; /* Added padding for better spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Added subtle shadow for depth */
+  border-radius: 10px; /* Added border radius for a more modern look */
 }
 
 /* Link Styling */
 .App-link {
-  color: #61dafb; /* Light blue color for links */
+  color: #FF6B6B; /* Updated to Coral Pink for a vibrant link color */
   text-decoration: none; /* Remove underline */
   font-weight: bold; /* Make links bold */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.App-link:hover {
+  color: #FF9F1C; /* Updated to Tangerine on hover for a dynamic effect */
 }
 
 /* Keyframes for Logo Spin Animation */

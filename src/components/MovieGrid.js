@@ -2,18 +2,15 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Grid, Typography, Box } from '@mui/material';
 import MovieCard from './MovieCard';
-import { fetchMoviesByGenre } from '../redux/action';
+import { fetchPopularMovies } from '../redux/action';
 
 const MovieGrid = () => {
   const dispatch = useDispatch();
   const movies = useSelector((state) => state.movies.movieList || []);
-  const selectedGenre = useSelector((state) => state.movies.selectedGenre || '');
 
   useEffect(() => {
-    if (selectedGenre) {
-      dispatch(fetchMoviesByGenre(selectedGenre.toLowerCase()));
-    }
-  }, [selectedGenre, dispatch]);
+    dispatch(fetchPopularMovies());
+  }, [dispatch]);
 
   return (
     <Box sx={{ flexGrow: 1 }}>

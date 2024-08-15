@@ -1,21 +1,21 @@
 import React from 'react';
 import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import './MovieGrid.css';
+import './MovieCard.css'; // Import the CSS file
 
 const MovieCard = ({ movie }) => {
   const navigate = useNavigate();
 
   return (
     <Card
-      className="movie-grid-item"
+      className="MovieCard" // Apply the MovieCard class
       onClick={() => navigate(`/movie/${movie.id}`)}
     >
       {movie.poster_path ? (
         <CardMedia
           component="img"
           alt={movie.title}
-          image={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+          image={`https://image.tmdb.org/t/p/w780/${movie.poster_path}`}
           title={movie.title}
         />
       ) : (
@@ -23,9 +23,13 @@ const MovieCard = ({ movie }) => {
           <Typography>No Image Available</Typography>
         </Box>
       )}
-      <CardContent>
-        <Typography variant="h6" className="movie-title">{movie.title}</Typography>
-        <Typography variant="body2" className="movie-details">{movie.release_date}</Typography>
+      <CardContent className="MovieCard-content">
+        <Typography variant="h6" className="MovieCard-title">
+          {movie.title}
+        </Typography>
+        <Typography variant="body2" className="MovieCard-overview">
+          {movie.release_date}
+        </Typography>
       </CardContent>
     </Card>
   );

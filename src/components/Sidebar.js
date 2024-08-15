@@ -1,93 +1,71 @@
-// src/components/Sidebar.js
 import React from 'react';
-import { Box, List, ListItem, ListItemText, Divider, Typography, ListItemIcon } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-import HomeIcon from '@mui/icons-material/Home';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import SettingsIcon from '@mui/icons-material/Settings';
-import MovieIcon from '@mui/icons-material/Movie';
+import { Box } from '@mui/material';
+import Sidebar from './Sidebar';
+import AppBar from './AppBar';
 
-const genres = ['Action', 'Comedy', 'Drama', 'Horror', 'Romance', 'Science', 'Thriller'];
-
-const Sidebar = () => {
-  const navigate = useNavigate();
-
-  const genreIcons = {
-    Action: <MovieIcon />,
-    Comedy: <MovieIcon />,
-    Drama: <MovieIcon />,
-    Horror: <MovieIcon />,
-    Romance: <MovieIcon />,
-    Science: <MovieIcon />,
-    Thriller: <MovieIcon />,
-  };
-
-  const handleGenreClick = (genre) => {
-    navigate(`/genre/${genre.toLowerCase()}`); // Navigate to the genre page with genre as URL parameter
-  };
-
+const MainLayout = ({ children }) => {
   return (
-    <Box 
-      sx={{ 
-        width: '250px', 
-        background: 'linear-gradient(to bottom, #000000, #e63946)', 
-        color: '#fff', 
-        display: 'flex', 
-        flexDirection: 'column', 
-        justifyContent: 'space-between', 
-        height: '100vh', 
-        p: 2 
+    <Box
+      sx={{
+        display: 'flex',
+        height: '100vh',
+        background: 'linear-gradient(to right, #000000, #333333, #000000)',
       }}
     >
-      {/* Top Section */}
-      <Box>
-        <Typography variant="h6" gutterBottom sx={{ color: '#fff' }}>
-          Navigation
-        </Typography>
-        <List>
-          <ListItem button onClick={() => navigate('/')}>
-            <ListItemIcon>
-              <HomeIcon sx={{ color: '#fff' }} />
-            </ListItemIcon>
-            <ListItemText primary="Home" sx={{ color: '#fff' }} />
-          </ListItem>
-          <ListItem button onClick={() => navigate('/favorites')}>
-            <ListItemIcon>
-              <FavoriteIcon sx={{ color: '#fff' }} />
-            </ListItemIcon>
-            <ListItemText primary="Favorites" sx={{ color: '#fff' }} />
-          </ListItem>
-        </List>
-        <Divider sx={{ my: 2, backgroundColor: '#fff' }} />
-        <Typography variant="h6" gutterBottom sx={{ color: '#fff' }}>
-          Genres
-        </Typography>
-        <List>
-          {genres.map((genre) => (
-            <ListItem button key={genre} onClick={() => handleGenreClick(genre)}>
-              <ListItemIcon>
-                {genreIcons[genre]}
-              </ListItemIcon>
-              <ListItemText primary={genre} sx={{ color: '#fff' }} />
-            </ListItem>
-          ))}
-        </List>
+      <Box
+        sx={{
+          width: '250px',
+          backgroundColor: '#000', // Black background for the sidebar
+          color: '#F5F5F5', // White Smoke text color for contrast
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100vh',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+        }}
+      >
+        <Sidebar />
       </Box>
 
-      {/* Bottom Section */}
-      <Box sx={{ mt: 'auto' }}>
-        <Divider sx={{ mb: 2, backgroundColor: '#fff' }} />
-        <List>
-          <ListItem button onClick={() => navigate('/settings')}>
-            <ListItemIcon>
-              <SettingsIcon sx={{ color: '#fff' }} />
-            </ListItemIcon>
-            <ListItemText primary="Settings" sx={{ color: '#fff' }} />
-          </ListItem>
-        </List>
+      <Box
+        sx={{
+          marginLeft: '250px', // Make space for the fixed sidebar
+          flexGrow: 1,
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <Box
+          sx={{
+            height: '64px',
+            position: 'fixed',
+            top: 0,
+            left: '250px',
+            right: 0,
+            zIndex: 1100,
+            backgroundColor: '#000', // Black background for the AppBar
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)', // Slightly darker shadow for a more pronounced effect
+          }}
+        >
+          <AppBar />
+        </Box>
+
+        <Box
+          sx={{
+            marginTop: '64px',
+            padding: 2,
+            flexGrow: 1,
+            overflowY: 'auto',
+            backgroundColor: '#121212', // Dark background for the main content area
+            color: '#F5F5F5', // White Smoke text color for contrast
+          }}
+        >
+          {children}
+        </Box>
       </Box>
     </Box>
   );
 };
 
-export default Sidebar;
+export default MainLayout;

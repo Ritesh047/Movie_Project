@@ -1,132 +1,113 @@
 /* src/components/MovieDetail.css */
 
-/* Container for the movie detail page */
+/* Container for the movie details page */
 .movie-detail-container {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  overflow: hidden;
+  padding: 16px;
+  background-color: #000; /* Black background for the container */
+  color: #fff; /* White text color */
 }
 
-/* Background image with blur effect */
+/* Background image styling */
 .movie-detail-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-image: url('https://image.tmdb.org/t/p/original/'); /* URL set dynamically in JS */
+  height: 50vh; /* Adjust height to cover part of the viewport */
   background-size: cover;
   background-position: center;
-  filter: blur(8px); /* Blur effect */
-  z-index: -1; /* Ensure background is behind content */
+  z-index: -1; /* Place behind other content */
 }
 
-/* Overlay to ensure readability of content */
+/* Overlay for the background image */
 .movie-detail-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-  z-index: 0;
+  height: 50vh; /* Same height as the background image */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: -1; /* Place behind other content */
 }
 
-/* Card containing movie details */
+/* Styling for the movie card */
 .movie-card {
-  width: 100%;
-  max-width: 900px; /* Limit card width */
-  background-color: rgba(0, 0, 0, 0.8); /* Dark background for readability */
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  z-index: 1; /* Ensure card is above the overlay */
+  max-width: 600px; /* Limit the maximum width */
+  margin: 0 auto; /* Center horizontally */
+  background-color: #1B263B; /* Deep Navy background color */
+  color: #F8F9FA; /* Almost White text color */
 }
 
-/* Poster image in the card */
+/* Styling for the movie poster image */
 .movie-poster {
   width: 100%;
-  height: 300px; /* Fixed height */
+  height: auto;
   object-fit: cover;
 }
 
-/* Content of the movie card */
+/* Styling for the content area of the card */
 .movie-card-content {
-  padding: 20px;
+  padding: 16px;
 }
 
-/* Title of the movie */
+/* Styling for the movie title */
 .movie-title {
-  font-size: 2rem;
+  font-size: 2rem; /* Larger font size for the title */
   font-weight: bold;
-  margin-bottom: 10px;
+  color: #FF6B6B; /* Coral Pink for the title */
 }
 
-/* Summary of the movie */
+/* Styling for the movie summary */
 .movie-summary {
   font-size: 1rem;
-  margin-bottom: 10px;
+  color: #FF9F1C; /* Tangerine for the summary text */
+  line-height: 1.4;
 }
 
-/* Details about the movie */
+/* Styling for movie details section */
 .movie-details {
-  font-size: 0.9rem;
+  margin-top: 16px;
 }
 
-/* Buttons section */
+/* Styling for emoji buttons section */
 .buttons-section {
-  margin-top: 20px;
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 
-/* Actors section title */
-.section-title {
-  font-size: 1.5rem;
-  font-weight: bold;
+/* Styling for the actors section */
+.actors-section {
+  margin-top: 32px;
 }
 
-/* Individual actor card */
+/* Styling for the actor cards */
 .actor-card {
-  background-color: rgba(0, 0, 0, 0.7); /* Dark background for cards */
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  max-width: 150px; /* Set maximum width */
+  margin: 0 auto; /* Center horizontally */
+  background-color: #1B263B; /* Deep Navy background color */
 }
 
-/* Actor image */
+/* Styling for the actor images */
 .actor-image {
   width: 100%;
-  height: 200px;
+  height: auto;
   object-fit: cover;
 }
 
-/* Actor card content */
-.actor-content {
-  padding: 10px;
-}
-
-/* Modal for trailer video */
+/* Styling for the trailer modal */
 .trailer-modal {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-/* Trailer video container */
+/* Styling for the trailer video container */
 .trailer-video-container {
   width: 80%;
-  height: 80%;
+  height: 60%;
 }
 
-/* Go back button */
-.go-back-button {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-}
+/* Styling for the go back */
