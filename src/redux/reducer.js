@@ -1,25 +1,25 @@
-import { SET_SELECTED_GENRE, SET_MOVIES } from './action';
+// src/redux/reducers/movieReducer.js
 
 const initialState = {
-  selectedGenre: '',
-  movieList: [],
+  movies: [],
+  selectedGenre: null,
 };
 
-const reducer = (state = initialState, action) => {
+const movieReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_SELECTED_GENRE:
+    case 'SET_SELECTED_GENRE':
       return {
         ...state,
         selectedGenre: action.payload,
       };
-    case SET_MOVIES:
+    case 'FETCH_MOVIES_BY_GENRE':
       return {
         ...state,
-        movieList: action.payload,
+        movies: action.payload,
       };
     default:
       return state;
   }
 };
 
-export default reducer;
+export default movieReducer;

@@ -1,106 +1,132 @@
-/* MovieDetail.css */
+/* src/components/MovieDetail.css */
 
-/* Container for the entire movie detail page */
+/* Container for the movie detail page */
 .movie-detail-container {
-    padding: 16px;
-    background-color: #333;
-    color: #fff;
-    min-height: 100vh;
-  }
-  
-  /* Card styling */
-  .movie-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #444;
-    border-radius: 8px;
-    overflow: hidden;
-    max-width: 800px;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Movie poster styling */
-  .movie-poster {
-    width: 100%;
-    height: auto;
-    max-height: 500px; /* Limit the maximum height for large images */
-    object-fit: cover;
-  }
-  
-  /* Fallback image styling */
-  .no-image {
-    width: 100%;
-    height: 200px;
-    background-color: #555;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 18px;
-    text-align: center;
-  }
-  
-  /* Card content styling */
-  .movie-card-content {
-    padding: 16px;
-    text-align: center;
-  }
-  
-  /* Movie details styling */
-  .movie-details {
-    margin-top: 16px;
-    text-align: left;
-  }
-  
-  /* Movie title styling */
-  .movie-title {
-    margin-bottom: 16px;
-  }
-  
-  /* Movie summary styling */
-  .movie-summary {
-    margin-top: 8px;
-  }
-  
-  /* Actors section styling */
-  .actors-section {
-    margin-top: 32px;
-  }
-  
-  /* Section title styling */
-  .section-title {
-    margin-bottom: 16px;
-  }
-  
-  /* Actor card styling */
-  .actor-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #555;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Actor image styling */
-  .actor-image {
-    width: 100%;
-    height: auto;
-  }
-  
-  /* Actor content styling */
-  .actor-content {
-    text-align: center;
-    padding: 8px;
-  }
-  
-  /* Button styling */
-  .go-back-button {
-    margin-top: 16px;
-    background-color: #f06;
-    color: #fff;
-  }
-  
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Background image with blur effect */
+.movie-detail-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://image.tmdb.org/t/p/original/'); /* URL set dynamically in JS */
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px); /* Blur effect */
+  z-index: -1; /* Ensure background is behind content */
+}
+
+/* Overlay to ensure readability of content */
+.movie-detail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  z-index: 0;
+}
+
+/* Card containing movie details */
+.movie-card {
+  width: 100%;
+  max-width: 900px; /* Limit card width */
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for readability */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1; /* Ensure card is above the overlay */
+}
+
+/* Poster image in the card */
+.movie-poster {
+  width: 100%;
+  height: 300px; /* Fixed height */
+  object-fit: cover;
+}
+
+/* Content of the movie card */
+.movie-card-content {
+  padding: 20px;
+}
+
+/* Title of the movie */
+.movie-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Summary of the movie */
+.movie-summary {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Details about the movie */
+.movie-details {
+  font-size: 0.9rem;
+}
+
+/* Buttons section */
+.buttons-section {
+  margin-top: 20px;
+}
+
+/* Actors section title */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Individual actor card */
+.actor-card {
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background for cards */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Actor image */
+.actor-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Actor card content */
+.actor-content {
+  padding: 10px;
+}
+
+/* Modal for trailer video */
+.trailer-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Trailer video container */
+.trailer-video-container {
+  width: 80%;
+  height: 80%;
+}
+
+/* Go back button */
+.go-back-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}

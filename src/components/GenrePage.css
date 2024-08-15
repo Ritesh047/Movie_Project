@@ -1,0 +1,92 @@
+/* src/components/GenrePage.css */
+
+/* Container for the entire genre page */
+.genre-page-container {
+    padding: 20px;
+    background-color: #f0f0f0; /* Light grey background for a soft look */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container for movie cards */
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Center movie cards */
+}
+
+/* Individual movie card */
+.movie-card {
+    width: 100%;
+    max-width: 250px; /* Limit card width */
+    background-color: #fff; /* White background for cards */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer; /* Indicate clickable cards */
+    position: relative; /* For positioning the ripple effect */
+}
+
+/* Hover effect for movie cards */
+.movie-card:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+/* Active effect for movie cards */
+.movie-card:active {
+    transform: scale(0.98); /* Slightly shrink the card */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
+    border: 2px solid #e63946; /* Add a border on touch/click */
+}
+
+/* Ripple effect */
+.movie-card:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1); /* Subtle dark overlay */
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.5s, opacity 0.5s;
+    pointer-events: none; /* Allow clicks through */
+}
+
+.movie-card:active:after {
+    transform: scale(3); /* Scale up ripple effect */
+    opacity: 0; /* Fade out ripple effect */
+}
+
+/* Poster image inside the movie card */
+.movie-poster {
+    width: 100%;
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-bottom: 2px solid #ddd; /* Divider between image and content */
+}
+
+/* Title of the movie */
+.movie-title {
+    margin: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333; /* Dark text color for contrast */
+    text-align: center; /* Center align title */
+}
+
+/* Overview of the movie */
+.movie-overview {
+    margin: 10px;
+    font-size: 0.9rem;
+    color: #666; /* Lighter text color */
+    text-align: center; /* Center align overview */
+    height: 60px; /* Fixed height to limit text area */
+    overflow: hidden; /* Hide overflow text */
+}

@@ -1,66 +1,67 @@
+/* src/components/MovieGrid.css */
+
 /* Container for the entire grid */
 .movie-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  /* Each grid item (movie card) */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Each grid item (movie card) */
+.movie-grid-item {
+  flex: 1 1 calc(25% - 16px); /* Responsive: 4 items per row */
+  box-sizing: border-box;
+  background: linear-gradient(to bottom right, #000000, #ff4b2b, #ff416c); /* Gradient from black to vibrant colors */
+  color: #fff; /* Text color to stand out against the gradient */
+  padding: 16px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Show pointer cursor to indicate interactivity */
+  position: relative; /* Position relative for shadow effects */
+}
+
+.movie-grid-item:hover,
+.movie-grid-item:focus {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+}
+
+.movie-grid-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.movie-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.movie-details {
+  font-size: 0.9rem;
+  color: #120f0ff0; /* Light color for better readability on the gradient */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
   .movie-grid-item {
-    flex: 1 1 calc(25% - 16px); /* Responsive: 4 items per row */
-    box-sizing: border-box;
-    background-color: #856731;
-    color: #fff;
-    padding: 16px;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .movie-grid-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Image inside the movie card */
-  .movie-grid-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 12px;
-  }
-  
-  /* Movie title */
-  .movie-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  /* Movie details (e.g., year, genre) */
-  .movie-details {
-    font-size: 0.9rem;
-    color: #bbb;
-  }
-  
-  /* Media queries for responsiveness */
-  @media (max-width: 1200px) {
-    .movie-grid-item {
       flex: 1 1 calc(33.33% - 16px); /* 3 items per row on large screens */
-    }
   }
-  
-  @media (max-width: 900px) {
-    .movie-grid-item {
+}
+
+@media (max-width: 900px) {
+  .movie-grid-item {
       flex: 1 1 calc(50% - 16px); /* 2 items per row on medium screens */
-    }
   }
-  
-  @media (max-width: 600px) {
-    .movie-grid-item {
+}
+
+@media (max-width: 600px) {
+  .movie-grid-item {
       flex: 1 1 100%; /* 1 item per row on small screens */
-    }
   }
-  
+}

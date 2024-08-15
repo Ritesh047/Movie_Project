@@ -1,3 +1,4 @@
+// src/components/Sidebar.js
 import React from 'react';
 import { Box, List, ListItem, ListItemText, Divider, Typography, ListItemIcon } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -5,14 +6,11 @@ import HomeIcon from '@mui/icons-material/Home';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import SettingsIcon from '@mui/icons-material/Settings';
 import MovieIcon from '@mui/icons-material/Movie';
-import { useDispatch } from 'react-redux';
-import { setSelectedGenre, fetchMoviesByGenre } from '../redux/action';
 
-const genres = ['Action', 'Comedy', 'Drama', 'Horror', 'Romance', 'Sci-Fi', 'Thriller'];
+const genres = ['Action', 'Comedy', 'Drama', 'Horror', 'Romance', 'Science', 'Thriller'];
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const genreIcons = {
     Action: <MovieIcon />,
@@ -20,14 +18,12 @@ const Sidebar = () => {
     Drama: <MovieIcon />,
     Horror: <MovieIcon />,
     Romance: <MovieIcon />,
-    'Sci-Fi': <MovieIcon />,
+    Science: <MovieIcon />,
     Thriller: <MovieIcon />,
   };
 
   const handleGenreClick = (genre) => {
-    dispatch(setSelectedGenre(genre));
-    dispatch(fetchMoviesByGenre(genre.toLowerCase())); // Fetch movies based on genre
-    navigate(`/genre/${genre.toLowerCase()}`);
+    navigate(`/genre/${genre.toLowerCase()}`); // Navigate to the genre page with genre as URL parameter
   };
 
   return (
